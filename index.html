@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropfra.me | Cybersecurity Research & Solutions</title>
+    <style>
+        :root {
+            --primary-red: #ff5757;      /* Your brand red */
+            --dark-red: #e63946;         /* Slightly darker for hover states */
+            --dark-color: #2b2d42;       /* Dark navy-gray for text */
+            --light-color: #f8f9fa;      /* Off-white for main background */
+            --light-gray: #edf2f4;       /* Light gray for alternate sections */
+            --accent-dark: #463f3a;      /* Dark gray for accents */
+            --text-dark: #333333;        /* Almost black for main text */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            padding: 1.5rem 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .logo-red {
+            color: var(--primary-red);
+        }
+        
+        .hero {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--dark-color) 0%, #1d1f2b 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 87, 87, 0.15) 0%, transparent 70%);
+        }
+        
+        .hero-title {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .hero-title span {
+            color: var(--primary-red);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            position: relative;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background-color: var(--primary-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 87, 87, 0.3);
+        }
+        
+        .btn.btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-red);
+            color: var(--primary-red);
+        }
+        
+        .btn.btn-outline:hover {
+            background-color: var(--primary-red);
+            color: white;
+        }
+        
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+        
+        .services {
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: var(--dark-color);
+        }
+        
+        .service-card h3 span {
+            color: var(--primary-red);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p strong {
+            color: var(--primary-red);
+        }
+        
+        .about-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact {
+            background-color: var(--dark-color);
+            color: white;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            height: 100%;
+            background: radial-gradient(circle at right top, rgba(255, 87, 87, 0.1) 0%, transparent 70%);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            position: relative;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.8rem;
+            color: white;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .contact-email {
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: #1a1b25;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Icon styling */
+        .service-icon {
+            height: 60px;
+            width: 60px;
+            background-color: rgba(255, 87, 87, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--primary-red);
+            font-size: 1.5rem;
+        }
+        
+        /* Feature section styling */
+        .features {
+            background: linear-gradient(135deg, #f8f9fa 0%, #edf2f4 100%);
+            position: relative;
+        }
+        
+        .features .container {
+            position: relative;
+        }
+        
+        .feature-box {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .feature-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .feature-box h3 span {
+            color: var(--primary-red);
+        }
+        
+        /* Utility classes */
+        .text-red {
+            color: var(--primary-red);
+        }
+        
+        .accent-bg {
+            background-color: rgba(255, 87, 87, 0.05);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+        }
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 87, 87, 0.1);
+            color: var(--primary-red);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-red);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .social-links i {
+            width: 20px;
+            height: 20px;
+            stroke-width: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="assets/dropfra.me_logo_nt.png" alt="dropfra.me logo" style="height: 40px; width: auto; display: block;">
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Absorbing Threats. <span>Empowering Resilience.</span></h1>
+            <p class="hero-subtitle">Protect your organization with cutting-edge threat intelligence and comprehensive security strategies</p>
+            <a href="#contact" class="btn">Get Protected</a>
+        </div>
+    </section>
+    
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="radar"></i>
+                    </div>
+                    <h3><span>Threat</span> Intelligence</h3>
+                    <p>Proactive identification and analysis of emerging threats relevant to your industry and infrastructure, providing actionable intelligence to strengthen your security posture.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="crosshair"></i>
+                    </div>
+                    <h3><span>Threat</span> Hunting</h3>
+                    <p>Proactive identification of hidden adversaries and advanced persistent threats that evade traditional security controls, using hypothesis-driven investigations and advanced analytics techniques.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3><span>Incident</span> Response</h3>
+                    <p>Rapid and effective response to security incidents, with clear procedures for containment, eradication, and recovery to minimize damage and business disruption.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="bell"></i>
+                    </div>
+                    <h3><span>Detection</span> Engineering</h3>
+                    <p>Development of custom detection rules and monitoring strategies to identify suspicious activities and potential breaches before they impact your operations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3><span>Security</span> Hardening</h3>
+                    <p>Comprehensive system and network hardening services to reduce your attack surface and implement security best practices across your entire infrastructure.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="settings"></i>
+                    </div>
+                    <h3><span>Security</span> Solutions</h3>
+                    <p>Implementation and integration of cybersecurity technologies tailored to your specific business needs, threat landscape, and compliance requirements.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About dropfra.me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At <strong>dropfra.me</strong>, we specialize in threat intelligence and defensive security measures that keep organizations one step ahead of evolving cyber threats. Founded by researchers and seasoned blue team professionals, we combine deep technical expertise with practical, business-focused solutions.</p>
+                    
+                    <p>Our approach is built on <strong>thorough research</strong>, <strong>proactive defense</strong>, and <strong>continuous enhancement</strong> of your security capabilities. We don't just help you respond to threats – we help you anticipate and prevent them.</p>
+                    
+                    <p>With experience across multiple industries and a focus on emerging threat vectors, our team provides the insights and implementations needed to protect your most valuable digital assets.</p>
+                    
+                    <a href="#contact" class="btn btn-outline">Learn More About Our Approach</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/threat-intelligence-dashboard.jpg" alt="Cybersecurity threat intelligence dashboard" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="feature-box">
+                <h3><span>Research-Driven</span> Intelligence</h3>
+                <p>Our team continuously researches emerging threats and attack methodologies, translating complex technical findings into actionable protections for your organization. We don't just apply generic solutions – we understand the specific threats targeting your industry and adapt our approach accordingly.</p>
+            </div>
+            <div class="feature-box">
+                <h3><span>End-to-End</span> Blue Team Expertise</h3>
+                <p>From initial hardening and detection engineering to ongoing monitoring and rapid response, we provide comprehensive defensive security capabilities. Our specialists have hands-on experience building and enhancing SOC operations for organizations of all sizes.</p>
+            </div>
+            <div class="feature-box">
+                <h3><span>Practical</span> Implementation Focus</h3>
+                <p>We bridge the gap between theoretical security and practical implementation, delivering solutions that protect your business without disrupting operations. Our recommendations are always tailored to your technical environment, resource constraints, and business priorities.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Email: <span class="contact-email">contact@dropfra.me</span></p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="github"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Ready to enhance your security?</h3>
+                    <p>Our team of specialists is ready to help you assess your current security posture and develop a comprehensive strategy to protect against emerging threats.</p>
+                    <br>
+                    <p>Schedule a free 30-minute consultation to discuss your security concerns and how our threat intelligence and blue team expertise can strengthen your defenses.</p>
+                    <br>
+                    <a href="#" class="btn">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 <span class="logo-red">drop</span>fra.me. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+    lucide.createIcons({
+        attrs: {
+      'stroke-width': '1.0',
+      'stroke': 'currentColor'
+    }
+    });
+
+    </script>
+</body>
+</html>
