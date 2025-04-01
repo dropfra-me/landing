@@ -18,26 +18,26 @@
             --accent-dark: #463f3a;      /* Dark gray for accents */
             --text-dark: #333333;        /* Almost black for main text */
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--light-color);
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-        
+
         header {
             padding: 1.5rem 0;
             background-color: white;
@@ -46,21 +46,21 @@
             top: 0;
             z-index: 100;
         }
-        
+
         .logo-container {
             display: flex;
             align-items: center;
         }
-        
+
         .logo-text {
             font-size: 2rem;
             font-weight: 700;
         }
-        
+
         .logo-red {
             color: var(--primary-red);
         }
-        
+
         .hero {
             padding: 8rem 0;
             background: linear-gradient(135deg, var(--dark-color) 0%, #1d1f2b 100%);
@@ -69,7 +69,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: "";
             position: absolute;
@@ -79,17 +79,17 @@
             height: 100%;
             background: radial-gradient(circle at 70% 30%, rgba(255, 87, 87, 0.15) 0%, transparent 70%);
         }
-        
+
         .hero-title {
             font-size: 3.2rem;
             margin-bottom: 1rem;
             position: relative;
         }
-        
+
         .hero-title span {
             color: var(--primary-red);
         }
-        
+
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 2.5rem;
@@ -99,7 +99,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 0.9rem 2rem;
@@ -111,28 +111,28 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .btn:hover {
             background-color: var(--dark-red);
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(255, 87, 87, 0.3);
         }
-        
+
         .btn.btn-outline {
             background-color: transparent;
             border: 2px solid var(--primary-red);
             color: var(--primary-red);
         }
-        
+
         .btn.btn-outline:hover {
             background-color: var(--primary-red);
             color: white;
         }
-        
+
         section {
             padding: 6rem 0;
         }
-        
+
         .section-title {
             font-size: 2.3rem;
             margin-bottom: 3rem;
@@ -141,7 +141,7 @@
             position: relative;
             padding-bottom: 1rem;
         }
-        
+
         .section-title::after {
             content: "";
             position: absolute;
@@ -152,17 +152,17 @@
             height: 3px;
             background-color: var(--primary-red);
         }
-        
+
         .services {
             background-color: var(--light-gray);
         }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
         }
-        
+
         .service-card {
             background-color: white;
             border-radius: 8px;
@@ -171,50 +171,50 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .service-card h3 {
             font-size: 1.5rem;
             margin: 1rem 0;
             color: var(--dark-color);
         }
-        
+
         .service-card h3 span {
             color: var(--primary-red);
         }
-        
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-        
+
         .about-text p {
             margin-bottom: 1.5rem;
         }
-        
+
         .about-text p strong {
             color: var(--primary-red);
         }
-        
+
         .about-image {
             width: 100%;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .contact {
             background-color: var(--dark-color);
             color: white;
             position: relative;
         }
-        
+
         .contact::before {
             content: "";
             position: absolute;
@@ -224,37 +224,37 @@
             height: 100%;
             background: radial-gradient(circle at right top, rgba(255, 87, 87, 0.1) 0%, transparent 70%);
         }
-        
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
             position: relative;
         }
-        
+
         .contact-info h3 {
             font-size: 1.6rem;
             margin-bottom: 1.8rem;
             color: white;
         }
-        
+
         .contact-info p {
             margin-bottom: 1rem;
             font-size: 1.05rem;
         }
-        
+
         .contact-email {
             color: var(--primary-red);
             font-weight: bold;
         }
-        
+
         footer {
             background-color: #1a1b25;
             color: rgba(255, 255, 255, 0.7);
             padding: 2rem 0;
             text-align: center;
         }
-        
+
         /* Icon styling */
         .service-icon {
             height: 60px;
@@ -268,17 +268,17 @@
             color: var(--primary-red);
             font-size: 1.5rem;
         }
-        
+
         /* Feature section styling */
         .features {
             background: linear-gradient(135deg, #f8f9fa 0%, #edf2f4 100%);
             position: relative;
         }
-        
+
         .features .container {
             position: relative;
         }
-        
+
         .feature-box {
             background-color: white;
             padding: 3rem;
@@ -286,44 +286,44 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
         }
-        
+
         .feature-box h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             color: var(--dark-color);
         }
-        
+
         .feature-box h3 span {
             color: var(--primary-red);
         }
-        
+
         /* Utility classes */
         .text-red {
             color: var(--primary-red);
         }
-        
+
         .accent-bg {
             background-color: rgba(255, 87, 87, 0.05);
         }
-        
+
         /* Responsive styles */
         @media (max-width: 768px) {
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.2rem;
             }
-            
+
             .service-card {
                 padding: 2rem;
             }
-            
+
             section {
                 padding: 4rem 0;
             }
@@ -367,7 +367,7 @@
             </div>
         </div>
     </header>
-    
+
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">Absorbing Threats. <span>Empowering Resilience.</span></h1>
@@ -375,7 +375,7 @@
             <a href="#contact" class="btn">Get Protected</a>
         </div>
     </section>
-    
+
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
@@ -422,33 +422,33 @@
                     <h3><span>Security</span> Solutions</h3>
                     <p>Implementation and integration of cybersecurity technologies tailored to your specific business needs, threat landscape, and compliance requirements.</p>
                 </div>
-                
+
             </div>
         </div>
     </section>
-    
+
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">About dropfra.me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>At <strong>dropfra.me</strong>, we specialize in threat intelligence and defensive security measures that keep organizations one step ahead of evolving cyber threats. Founded by researchers and seasoned blue team professionals, we combine deep technical expertise with practical, business-focused solutions.</p>
-                    
+
                     <p>Our approach is built on <strong>thorough research</strong>, <strong>proactive defense</strong>, and <strong>continuous enhancement</strong> of your security capabilities. We don't just help you respond to threats – we help you anticipate and prevent them.</p>
-                    
+
                     <p>With experience across multiple industries and a focus on emerging threat vectors, our team provides the insights and implementations needed to protect your most valuable digital assets.</p>
-                    
+
                     <a href="#contact" class="btn btn-outline">Learn More About Our Approach</a>
                 </div>
                 <div class="about-image">
-                    <img src="assets/threat-intelligence-dashboard.jpg" alt="Cybersecurity threat intelligence dashboard" style="width: 100%; height: auto; border-radius: 8px;">
+                    <img src="assets/threat-intelligence-dashboard.png" alt="Cybersecurity threat intelligence dashboard" style="width: 100%; height: auto; border-radius: 8px;">
                 </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section class="features">
         <div class="container">
             <h2 class="section-title">Why Choose Us</h2>
@@ -466,7 +466,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title" style="color: white;">Contact Us</h2>
@@ -474,6 +474,9 @@
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     <p>Email: <span class="contact-email">contact@dropfra.me</span></p>
+                    <p>NIP: <span class="logo-red">521-348-22-73</span></p>
+                    <p>REGON: <span class="logo-red">541186603</span></p>
+                    <p>NRB: <span class="logo-red">PL 96 1020 1068 0000 1502 0532 9414</span></p>
                     <div class="social-links">
                         <a href="#"><i data-lucide="github"></i></a>
                         <a href="#"><i data-lucide="linkedin"></i></a>
@@ -491,7 +494,7 @@
             </div>
         </div>
     </section>
-    
+
     <footer>
         <div class="container">
             <p>&copy; 2025 <span class="logo-red">drop</span>fra.me. All rights reserved.</p>
